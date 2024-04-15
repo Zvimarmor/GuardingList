@@ -57,6 +57,7 @@ if __name__ == "__main__":
     Guard_list.add_guard(Guard("John", "Group1", 0))
     Guard_list.add_guard(Guard("Doe", "Group1", 0))
     Guard_list.add_guard(Guard("Jane", "Group2", 0))
+    Guard_list.add_guard(Guard("Doe", "Group2", 0))
     current_time = datetime.now()
 
     main(1.5, Guard_list, current_time)
