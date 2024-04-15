@@ -16,7 +16,8 @@ def easy_case(total_time, Guard_list):
 
     time_for_each = total_time//Guard_list.number_of_guards
     for name in range(Guard_list.number_of_guards):
-        Guard_list.list[name].guard_time = time_for_each
+        currentguard = Guard_list.list[name]
+        currentguard.guard_time = time_for_each
     return Guard_list
 
 def hard_case(total_time, Guard_list):
@@ -34,7 +35,8 @@ def hard_case(total_time, Guard_list):
     
     time_for_each = total_time//Guard_list.number_of_guards
     for name in range:
-        Guard_list.list[name].guard_time = time_for_each
+        currentguard = Guard_list.list[name]
+        currentguard.guard_time = time_for_each
     return Guard_list
 
 def main(total_time, Guard_list, current_time):
@@ -46,10 +48,11 @@ def main(total_time, Guard_list, current_time):
         hard_case(total_time, Guard_list)
     
     for name in range(Guard_list.number_of_guards):
-        if Guard_list.list[name].guard_time > 0:
+        currentguard = Guard_list.list[name]
+        if currentguard.guard_time == 0:
             print(name, "is guarding now for", convert_m_to_t(Guard_list.list[name].guard_time), "minutes")
-            Guard_list.list[name].guard_time -= 1
-            Guard_list.list[name].time_already_woke += 1
+            currentguard.guard_time -= 1
+            currentguard.time_already_woke += 1
             break
 
     print("Time to guard is over")
