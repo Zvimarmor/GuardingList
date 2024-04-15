@@ -20,21 +20,27 @@ class Guard:
         self.guard_time = guard_time
         self.time_already_woke = 0
 
+    def __str__(self):
+        return self.name, self.group, self.guard_time, self.time_already_woke
+
 class Guard_list:
     def __init__(self):
-        self.list = {}
+        self.list = []
         self.number_of_guards = 0
 
     def add_guard(self, guard):
-        self.list[guard.name] = guard.name
-        self.list[guard.group] = guard.group
-        self.list[guard.guard_time] = guard.guard_time
-        self.list[guard.time_already_woke] = guard.time_already_woke
+        self.list.append(guard)
         self.number_of_guards += 1
 
-    def print_list(self):
-        for name in self.list:
-            print(name, self.guard_time)
+    def __str__(self):
+        answer = ""
+        for guard in range(self.number_of_guards):
+            #answer += "name: " + self.list[guard].name + " group: " + self.list[guard].group + " guard time: " + str(self.list[guard].guard_time) + " time already woke: " + str(self.list[guard].time_already_woke)+ "\n"
+            answer += "name: " + self.list[guard].name + "\n"
+        return answer
+    
+
+
 
 
 
